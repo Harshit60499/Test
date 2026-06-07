@@ -9,7 +9,7 @@ Pipeline {
 				step { checkout scm }
 				}
 			stage ('copy to test server') {
-				step { sh 'cp -r ${WORKSPACE} /opt/test-server/}
+				step { sh 'cp -r ${WORKSPACE} /opt/test-server/'}
 				}
 		}
 	}
