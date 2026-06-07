@@ -3,13 +3,13 @@ pipeline {
 		label 'TestAgent'} {
 		stages {
 			stage ('intimation on push in test branch') {
-				step { echo "push hogaya hai bhai test mai" }
+				steps { echo "push hogaya hai bhai test mai" }
 				}
-			stage ( 'store git file in Jenkins' ) {
-				step { checkout scm }
+			stage ('store git file in Jenkins') {
+				steps { checkout scm }
 				}
 			stage ('copy to test server') {
-				step { sh 'cp -r ${WORKSPACE} /opt/test-server/'}
+				steps { sh 'cp -r ${WORKSPACE} /opt/test-server/'}
 				}
 		}
 	}
