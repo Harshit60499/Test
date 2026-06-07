@@ -1,0 +1,15 @@
+pipeline {
+	agent {
+		label 'ProductionAgent'} 
+		stages {
+			stage ('intimation on push in prod branch') {
+				steps { echo "push hogaya hai bhai prod mai" }
+				}
+			stage ('store git file in Jenkins') {
+				steps { checkout scm }
+				}
+			stage ('copy to test server') {
+				steps { sh 'cp -r ${WORKSPACE} /opt/prod-server/'}
+				}
+	}
+}
